@@ -28,3 +28,65 @@ h1 {
     width: 300px;
     cursor: pointer;
 }
+
+#popup {
+    background: black;
+    opacity: 0.5;
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    z-index: 1;
+}
+
+#popup-galerie {
+    width: 950px;
+    background: white;
+    position: absolute;
+    margin: 75px auto;
+    left: 350px;
+    top: 0;
+    display: flex;
+    z-index: 3;
+    /* min-height: 700px; */
+    padding: 10px;
+    box-shadow: 8px 8px 0px black; 
+}
+
+#popup-galerie .img {
+    flex: 6;
+}
+
+#popup-galerie img {
+    width: 100%;
+}
+
+#popup-galerie .commentaire {
+    flex: 2;
+    padding: 20px;
+}
+
+.delete {
+    height: 30px;
+    border:1px solid black;
+    text-align: center;
+    border-radius: 20px;
+    padding: 0 10px;
+    cursor: pointer;
+    position: relative;
+    top: -20px;
+    left: 25px;
+    background: #ccc;
+}
+
+.delete:hover {
+    background: black;
+    color:white;
+}
+
+.delete::after {
+    content: 'x';
+    font-size: 18px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}

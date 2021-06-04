@@ -24,16 +24,39 @@ window.onload = function(){
     body.appendChild(h1);
     body.appendChild(galerie);
 
-    const obj = {
-        key: 'value'
+    const imgPath = {
+        path: 'img/',
+        prefix: 'image'
     }
 
-    const objectArray = [
-        {
-            key: 'value'
-        }, 
-        {
-            key: 'value'
-        }
-    ]
+    for(let i  = 1; i < 11; i++){
+        const img = createElement('img');
+        img.addEventListener('click', function(event){
+            const popup = createElement('div', [], 'popup');
+            const galeriePopup = createElement('div', [], 'popup-galerie');
+            // child galeriePopup
+            const imgClass = createElement('div', ['img']);
+            imgClass.appendChild(event.target);
+            const com = createElement('div', ['commentaire']);
+            const deletePopup = createElement('div', ['delete']);
+
+            galeriePopup.appendChild(imgClass);
+            galeriePopup.appendChild(com);
+
+            galeriePopup.appendChild(deletePopup);
+
+            deletePopup.addEventListener('click', (e) => {
+                body.removeChild(popup);
+                // console.log(e.target.parentNode);
+                body.removeChild(e.target.parentNode);
+            });
+
+            body.appendChild(popup);
+            body.appendChild(galeriePopup);  
+        }, false);
+
+        console.log(img);
+        img.setAttribute('src', imgPath.path + imgPath.prefix + i + '.png');
+        galerie.appendChild(img);
+    }
 }
