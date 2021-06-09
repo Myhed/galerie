@@ -36,7 +36,9 @@ window.onload = function(){
             const galeriePopup = createElement('div', [], 'popup-galerie');
             // child galeriePopup
             const imgClass = createElement('div', ['img']);
-            imgClass.appendChild(event.target);
+            const imgElement = createElement('img');
+            imgElement.src = event.target.src;
+            imgClass.appendChild(imgElement);
             const com = createElement('div', ['commentaire']);
             const deletePopup = createElement('div', ['delete']);
 
